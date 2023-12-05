@@ -12,28 +12,6 @@ categories:
 - 笔记
 ---
 
-### react开发简洁开发
-
-``` react
-const onFinish = async (values) => {
-  console.log(values);
-  //对象字典，以便更简洁地构造 userData
-  const userDataBuilders = {
-    mobile: (values) => new URLSearchParams({
-      mobile: values.mobile,
-      code: values.code,
-      password: values.password,
-      autologin: values.remember,
-    }),
-    email: (values) => new URLSearchParams({
-      email: `${values.emailPrefix}${values.emailSuffix}`,
-      code: values.code,
-      password: values.password,
-      autologin: values.remember,
-    }),
-  };
-```
-
 ### 跨域问题
 
 记录一次跨域问题，找了1个小时，原来与BaseUrl有关
@@ -76,5 +54,27 @@ axios.defaults.baseURL = '/api/'
       return Promise.reject('请输入正确的邮箱前缀'); // 验证失败，返回错误信息
    }
  };
+```
+
+### react开发简洁开发
+
+``` react
+const onFinish = async (values) => {
+  console.log(values);
+  //对象字典，以便更简洁地构造 userData
+  const userDataBuilders = {
+    mobile: (values) => new URLSearchParams({
+      mobile: values.mobile,
+      code: values.code,
+      password: values.password,
+      autologin: values.remember,
+    }),
+    email: (values) => new URLSearchParams({
+      email: `${values.emailPrefix}${values.emailSuffix}`,
+      code: values.code,
+      password: values.password,
+      autologin: values.remember,
+    }),
+  };
 ```
 

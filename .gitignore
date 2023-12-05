@@ -6,7 +6,8 @@
 tmp/
 
 # 忽略所有的编译生成文件
-build/
+.deploy_git/
+public/
 dist/
 *.exe
 *.o

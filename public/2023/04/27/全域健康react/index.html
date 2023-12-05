@@ -11,7 +11,7 @@
   <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
   
   
-    <meta name="keywords" content="前端,react,字典,表单格式,正则,跨域," />
+    <meta name="keywords" content="react,前端,字典,表单格式,正则,跨域," />
   
 
   
@@ -132,9 +132,7 @@
     </header>
 
     <div class="post-content">
-      <h3 id="react开发简洁开发"><a href="#react开发简洁开发" class="headerlink" title="react开发简洁开发"></a>react开发简洁开发</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const onFinish = async (values) =&gt; &#123;</span><br><span class="line">  console.log(values);</span><br><span class="line">  //对象字典，以便更简洁地构造 userData</span><br><span class="line">  const userDataBuilders = &#123;</span><br><span class="line">    mobile: (values) =&gt; new URLSearchParams(&#123;</span><br><span class="line">      mobile: values.mobile,</span><br><span class="line">      code: values.code,</span><br><span class="line">      password: values.password,</span><br><span class="line">      autologin: values.remember,</span><br><span class="line">    &#125;),</span><br><span class="line">    email: (values) =&gt; new URLSearchParams(&#123;</span><br><span class="line">      email: `$&#123;values.emailPrefix&#125;$&#123;values.emailSuffix&#125;`,</span><br><span class="line">      code: values.code,</span><br><span class="line">      password: values.password,</span><br><span class="line">      autologin: values.remember,</span><br><span class="line">    &#125;),</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h3><p>记录一次跨域问题，找了1个小时，原来与BaseUrl有关</p>
+      <h3 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h3><p>记录一次跨域问题，找了1个小时，原来与BaseUrl有关</p>
 <span id="more"></span>
 
 <p>这是放在src下的<code>setupProxy.js</code>文件,该路径下会自动识别</p>
@@ -145,6 +143,8 @@
 
 <h3 id="邮箱-之前的前缀（不包括-）"><a href="#邮箱-之前的前缀（不包括-）" class="headerlink" title="邮箱@之前的前缀（不包括@）"></a>邮箱@之前的前缀（不包括@）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const validateEmail = async (_, value) =&gt; &#123;</span><br><span class="line">  const emailPrefixRegex = /^(?![_.])[a-zA-Z0-9._]+(?&lt;![_.])$/;</span><br><span class="line">  if (value &amp;&amp; emailPrefixRegex.test(value)) &#123;</span><br><span class="line">     return Promise.resolve(); // 验证通过</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">     return Promise.reject(&#x27;请输入正确的邮箱前缀&#x27;); // 验证失败，返回错误信息</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+<h3 id="react开发简洁开发"><a href="#react开发简洁开发" class="headerlink" title="react开发简洁开发"></a>react开发简洁开发</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const onFinish = async (values) =&gt; &#123;</span><br><span class="line">  console.log(values);</span><br><span class="line">  //对象字典，以便更简洁地构造 userData</span><br><span class="line">  const userDataBuilders = &#123;</span><br><span class="line">    mobile: (values) =&gt; new URLSearchParams(&#123;</span><br><span class="line">      mobile: values.mobile,</span><br><span class="line">      code: values.code,</span><br><span class="line">      password: values.password,</span><br><span class="line">      autologin: values.remember,</span><br><span class="line">    &#125;),</span><br><span class="line">    email: (values) =&gt; new URLSearchParams(&#123;</span><br><span class="line">      email: `$&#123;values.emailPrefix&#125;$&#123;values.emailSuffix&#125;`,</span><br><span class="line">      code: values.code,</span><br><span class="line">      password: values.password,</span><br><span class="line">      autologin: values.remember,</span><br><span class="line">    &#125;),</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -153,7 +153,7 @@
     
   <div id="toc" class="toc-article">
     <strong class="toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E5%BC%80%E5%8F%91%E7%AE%80%E6%B4%81%E5%BC%80%E5%8F%91"><span class="toc-text">react开发简洁开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-text">跨域问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E7%AE%B1-%E4%B9%8B%E5%89%8D%E7%9A%84%E5%89%8D%E7%BC%80%EF%BC%88%E4%B8%8D%E5%8C%85%E6%8B%AC-%EF%BC%89"><span class="toc-text">邮箱@之前的前缀（不包括@）</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="toc-text">跨域问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%AE%E7%AE%B1-%E4%B9%8B%E5%89%8D%E7%9A%84%E5%89%8D%E7%BC%80%EF%BC%88%E4%B8%8D%E5%8C%85%E6%8B%AC-%EF%BC%89"><span class="toc-text">邮箱@之前的前缀（不包括@）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#react%E5%BC%80%E5%8F%91%E7%AE%80%E6%B4%81%E5%BC%80%E5%8F%91"><span class="toc-text">react开发简洁开发</span></a></li></ol>
   </div>
 
 
@@ -179,6 +179,11 @@
   
       <div class="post-nav-item post-nav-prev">
           
+          <a href="/2023/11/30/%E5%AE%9E%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%8811%E6%9C%88%EF%BC%89/" rel="prev" title="23年11月实习笔记">
+            23年11月实习笔记
+          </a>
+          <span>〉</span>
+        
       </div>
     </div>
   
@@ -353,20 +358,5 @@
 
   
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

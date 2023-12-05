@@ -42,7 +42,7 @@ url: https://mingjourney.com/
 root: /
 theme_config:
   # 设置文章摘要长度
-  excerpt_length: 200
+  excerpt_length: 100
   # 显示文章摘要
   show_excerpt: true
 # comment extend, support gialk, giscus
