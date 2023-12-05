@@ -1,0 +1,55 @@
+
+# html lang
+language: zh-Hans
+
+
+theme: xoxo-plus
+# main menu navigation
+menu:
+  home: /
+  post:
+      categories: /categories
+      archives: /archives
+      tags: /tags
+  Papers: /paper
+  project: /project
+  activity: /activity
+  search: /search
+  # about: http://www.MingJourney.com
+  # rss: /atom.xml
+
+# Miscelaneous
+favicon: footer-logo.png
+logo:
+
+share:
+    show: false
+    img:
+    img_alt:
+    tip_text: test
+
+# stylesheets loaded in the <head>
+stylesheets:
+# - /css/normalize.css
+- //cdn.bootcss.com/pure/1.0.0/pure-min.css
+- /css/xoxo.css
+deploy:
+  type: git
+  repository: git@github.com:mingjourney/mingjourney.github.io.git
+  branch: main
+
+url: https://mingjourney.com/
+root: /
+theme_config:
+  # 设置文章摘要长度
+  excerpt_length: 200
+  # 显示文章摘要
+  show_excerpt: true
+# comment extend, support gialk, giscus
+# giscus https://giscus.app/zh-CN
+
+# scripts loaded in the end of the body
+scripts:
+#- //cdn.bootcss.com/zepto/1.2.0/zepto.min.js
+#- /js/xoxo.js
+
