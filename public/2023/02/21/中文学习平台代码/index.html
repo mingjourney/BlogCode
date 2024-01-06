@@ -11,7 +11,7 @@
   <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
   
   
-    <meta name="keywords" content="React,前端,Javascipt,组件化编程,combineReducers,redux,异步数据获取,redux-persist,样式化组件,生命周期,单向数据流," />
+    <meta name="keywords" content="前端,React,Javascipt,组件化编程,combineReducers,redux,异步数据获取,redux-persist,样式化组件,生命周期,单向数据流," />
   
 
   
@@ -144,12 +144,12 @@
 <h3 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h3><p>一些异步问题</p>
 <p><strong>解决</strong>：一部分使用了回调函数，一部分引入async和promise解决</p>
 <h3 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h3><p>点击取消遇到Form组件不能及时改变问题，</p>
- <img src="/image/img-中文平台3.jpg" alt="img" style="zoom:33%;" />
+ <img src="https://36038098-1323630637.cos.ap-nanjing.myqcloud.com/images/img-中文平台3.jpg" alt="img" style="zoom:33%;" />
 
 <p><strong>解决</strong>：对onCancle函数绑定修改某状态为时间戳，传递给Form组件，以此更新Form组件。</p>
 <p>用户列表等..</p>
-<p><img src="/image/img-%E4%B8%AD%E6%96%87%E5%B9%B3%E5%8F%B01.jpg" alt="img1">  </p>
-<p><img src="/image/img-%E4%B8%AD%E6%96%87%E5%B9%B3%E5%8F%B02.jpg" alt="img"> </p>
+<p><img src="https://36038098-1323630637.cos.ap-nanjing.myqcloud.com/images/img-%E4%B8%AD%E6%96%87%E5%B9%B3%E5%8F%B01.jpg" alt="img1"></p>
+<p><img src="https://36038098-1323630637.cos.ap-nanjing.myqcloud.com/images/img-%E4%B8%AD%E6%96%87%E5%B9%B3%E5%8F%B02.jpg" alt="img"></p>
 
     </div>
 
@@ -363,5 +363,20 @@
 
   
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
