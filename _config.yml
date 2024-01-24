@@ -35,7 +35,7 @@ stylesheets:
 - /css/xoxo.css
 deploy:
   type: git
-  repository: git@github.com:mingjourney/mingjourney.github.io.git
+  repository: https://github.com/mingjourney/mingjourney.github.io.git
   branch: main
 
 url: https://mingjourney.com/
