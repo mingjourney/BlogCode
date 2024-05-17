@@ -1,5 +1,5 @@
 ---
-title: 2024年的Spring Cloud
+title: 2024年版Spring Cloud配置
 date: 2024-4-3 15:54:13
 tags:
 - 后端

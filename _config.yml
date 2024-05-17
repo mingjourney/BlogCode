@@ -38,7 +38,7 @@ deploy:
   repository: https://github.com/mingjourney/mingjourney.github.io.git
   branch: main
 
-url: https://mingjourney.com/
+url: https://mingjourney.github.io/
 root: /
 theme_config:
   # 设置文章摘要长度
