@@ -146,7 +146,82 @@ requeire函数返回的就是exports
 
 es模块导入不能省略拓展名
 
+node中 globalThis === global === window
+
+process.nextTick(() => {}) // tick队列
+
+调用栈 tick队列 微任务队列 宏任务队列
+
+path.resolve() 返回的是工作目录
+
+path.resolve(__dirname, './1.js')
+
+确保健壮性，各环境各工作目录运行都能保证一样的结果
+
+### fs
+
+```js
+const path = require('node:path');
+// const fs = require('node:fs');
+const fs = require('node:fs/promises');
+console.log(__dirname);
+console.log(path.resolve(__dirname, './1.js'));
+// const buffer = fs.readFileSync(path.resolve(__dirname, './1.js'));
+// console.log('buffer', buffer.toString());
+// fs.readFile(path.resolve(__dirname, './1.js'), (err, buffer) => {console.log('buffer1', buffer.toString())});
+fs.readFile(path.resolve(__dirname, './1.js'))
+  .then((buffer) => {
+    console.log('buffer2', buffer);
+  })
+  .catch(err => console.log('err', err));
+(async () => {
+  try {
+    const buffer = await fs.readFile(path.resolve(__dirname, './1.js'));
+    console.log('buffer3', buffer.toString());
+  } catch (err) {
+    console.log('err', err);
+  }
+})();
+// fs.readFile() 读取文件
+(async () => {
+  const buffer = await fs.readFile(path.resolve(__dirname, './1.js'))
+  return fs.appendFile(path.resolve(__dirname, '3.js'), buffer);
+})();
+fs.readFile(path.resolve(__dirname, './1.js')).then((buffer) => {
+  return fs.appendFile(path.resolve(__dirname, '2.js'), buffer);
+});
+// fs.mkdir() 创建目录
+// fs.rmdir() 删除目录
+// fs.rmdir() 删除目录
+
+```
+
+## 网络协议
+
+请求首行
+
+请求头
+
+Accept能够接受的内容类型
+
+Accept-Encoding能接受的编码方式
+
+Accept-Language能接受的自然语言
+
+User-Agent身份标识
+
+请求体
+
+空行
 
 
 
+在 ESM 中，可通过 `importmap` 使得裸导入可正常工作:
 
+```
+<script type="importmap">  {    "imports": {      "lodash": "https://cdn.skypack.dev/lodash",      "ms": "https://cdn.skypack.dev/ms"    }  }</script>
+```
+
+对于 `~1.2.3` 而言，它的版本号范围是 `>=1.2.3 <1.3.0`
+
+对于 `^1.2.3` 而言，它的版本号范围是 `>=1.2.3 <2.0.0`
